@@ -15,13 +15,15 @@ class TestProfile(unittest.TestCase):
     # Test a Profile can add a favourite Movie
     def test_profile_can_add_fave_movie(self):
         self.profile_1.add_fave_movie(self.movie_1)
-        self.assertEqual(1, len(self.profile_1.favourites)
+        self.assertEqual(1, len(self.profile_1.favourites))
 
     # Test a Profile can remove a given Movie from favourites
     def test_profile_can_remove_fave_movie(self):
-        self.profile_1.remove_fave_movie(self.movie)
+        self.profile_1.favourites = [(self.movie_1), (self.movie_2)]
+        self.profile_1.remove_fave_movie(self.movie_1)
+        self.assertEqual(1, len(self.profile_1.favourites))
 
     # # Test a Profile can return a list of Favourites
     def test_profile_can_return_list_of_faves(self):
-        self.profile_1.add_fave_movie(self.movie_1)
-        self.assertEqual([('Hunger Games', 'Gary Ross')], self.profile_1.get_faves(self.profile_1))
+        self.profile_1.add_fave_movie(self.movie_2)
+        self.assertEqual(['Hunger Games'], self.profile_1.get_faves())
