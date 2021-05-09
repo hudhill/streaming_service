@@ -26,4 +26,5 @@ class TestAccount(unittest.TestCase):
     # # # Test an Account can return a list of Profiles
     def test_account_can_return_list_of_profiles(self):
         self.account_1.add_profile(self.profile_1)
-        self.assertEqual(["harrisonF"], self.account_1.get_profiles())
+        self.account_1.add_profile(self.profile_2)
+        self.assertEqual(["harrisonF", "markH"], self.account_1.get_profiles())

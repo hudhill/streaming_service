@@ -25,5 +25,6 @@ class TestProfile(unittest.TestCase):
 
     # # Test a Profile can return a list of Favourites
     def test_profile_can_return_list_of_faves(self):
+        self.profile_1.add_fave_movie(self.movie_1)
         self.profile_1.add_fave_movie(self.movie_2)
-        self.assertEqual(['Hunger Games'], self.profile_1.get_faves())
+        self.assertEqual(['The Fugitive', 'Hunger Games'], self.profile_1.get_faves())

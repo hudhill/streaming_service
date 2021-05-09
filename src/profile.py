@@ -6,10 +6,13 @@ class Profile:
         self.favourites = []
 
     def add_fave_movie(self, movie):
-        self.favourites.append(movie.title)
+        self.favourites.append(movie)
 
     def remove_fave_movie(self, movie):
         self.favourites.remove(movie)
 
     def get_faves(self):
-        return self.favourites
+        fave_titles = []
+        for favourite in self.favourites:
+            fave_titles.append(favourite.title)
+        return fave_titles
